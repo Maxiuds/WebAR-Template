@@ -92,3 +92,55 @@ git branch
 <img width="712" height="382" alt="image" src="https://github.com/user-attachments/assets/9018f248-78f8-4743-a8ca-db41babd5cce" />
 
 Рис. 8 – Створення нової Git-гілки та перехід до неї.
+
+## 9. Створення Pattern-маркера
+
+Для одного з об'єктів WebAR-проєкту було створено Pattern-маркер за допомогою онлайн-генератора AR.js Marker Training. У результаті було отримано файли `pattern-device.patt` та `pattern-device.png`, які додано до репозиторію.
+
+---
+
+## 10. Заміна Barcode-маркера на Pattern-маркер
+
+У файлі `index.html` внесено зміни до конфігурації маркерів. Один Barcode-маркер було замінено на Pattern-маркер шляхом зміни параметрів `patternNames` та `patternBarcode`.
+
+```javascript
+const patternNames = ['', 'pattern-device.patt', ''];
+const patternBarcode = [1, -1, 3];
+```
+
+---
+
+## 11. Оновлення буклету
+
+У буклеті WebAR один із Barcode-маркерів було замінено на створений Pattern-маркер. Після внесення змін буклет було повторно збережено у форматі PDF.
+
+---
+
+## 12. Фіксація змін у Git
+
+Після завершення редагування проєкту всі зміни було додано до локального Git-репозиторію, створено коміт та відправлено до віддаленого репозиторію GitHub.
+
+```bash
+git add .
+git commit -m "Changed barcode marker to pattern marker"
+git push origin WebAR-Template_with_pattern_marker
+```
+
+<img width="778" height="322" alt="image" src="https://github.com/user-attachments/assets/96c87f52-034e-4d7e-bad7-0249d2498bf2" />
+
+
+## 13. Публікація через GitHub Pages
+
+Для перевірки роботи WebAR-застосунку налаштовано GitHub Pages. Як джерело публікації обрано гілку `WebAR-Template_with_pattern_marker`, після чого зміни стали доступними через веббраузер.
+
+---
+
+## 14. Перевірка роботи застосунку
+
+Після оновлення GitHub Pages виконано тестування WebAR-застосунку. Перевірено коректне розпізнавання Pattern-маркера та відображення мультимедійного контенту. Також підтверджено працездатність інших Barcode-маркерів.
+
+<img width="710" height="1537" alt="image" src="https://github.com/user-attachments/assets/4f9fb9b4-c556-444e-b842-a25567dd3f85" />
+
+## Висновок
+
+Під час виконання лабораторної роботи було закріплено навички роботи з Git та GitHub, налаштовано безпечне підключення за допомогою SSH-ключів, створено окрему гілку проєкту, реалізовано використання Pattern-маркера замість Barcode-маркера, оновлено WebAR-буклет та успішно опубліковано результати за допомогою GitHub Pages. Усі поставлені завдання лабораторної роботи виконано.
